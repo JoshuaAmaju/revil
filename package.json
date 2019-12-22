@@ -6,8 +6,8 @@
   "browser": "dist/xclass.umd.js",
   "description": "Convert JSON to class",
   "author": "Joshua Amaju <princejosh0007@gmail.com>",
-  "bugs": "https://github.com/JoshuaAmaju/scribe/issues",
-  "repository": "https://github.com/JoshuaAmaju/scribe.git",
+  "bugs": "https://github.com/JoshuaAmaju/xclass/issues",
+  "repository": "https://github.com/JoshuaAmaju/xclass.git",
   "license": "MIT",
   "files": [
     "dist"
