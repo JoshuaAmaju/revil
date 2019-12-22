@@ -1,7 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -16,83 +13,4 @@ MERCHANTABLITY OR NON-INFRINGEMENT.
 See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-
-/**
- * traverses the entire object unitl
- * the specified value is found.
- * Not: Does not cover arrays.
- */
-function deepFind(box, value) {
-    var result = box[value];
-    if (!result) {
-        for (var key in box) {
-            var item = box[key];
-            if (is.object(item)) {
-                result = deepFind(item, value);
-            }
-        }
-    }
-    return result;
-}
-var is = {
-    object: function (box) {
-        return Object.prototype.toString.call(box) === "[object Object]";
-    }
-};
-//# sourceMappingURL=utils.js.map
-
-function toClass(instance) {
-    var _json = {};
-    var _instance = new instance();
-    var _pool = Object.keys(_instance);
-    var exec = function () {
-        for (var _i = 0, _pool_1 = _pool; _i < _pool_1.length; _i++) {
-            var key = _pool_1[_i];
-            _instance[key] = deepFind(_json, key);
-        }
-        return _instance;
-    };
-    return {
-        from: function (json) {
-            _json = __assign({}, json);
-            return exec();
-        },
-        exclude: function () {
-            var values = [];
-            for (var _i = 0; _i < arguments.length; _i++) {
-                values[_i] = arguments[_i];
-            }
-            _pool = _pool.filter(function (v) { return !values.includes(v); });
-            return this;
-        },
-        only: function () {
-            var values = [];
-            for (var _i = 0; _i < arguments.length; _i++) {
-                values[_i] = arguments[_i];
-            }
-            _pool = values;
-            return this;
-        },
-        pluck: function () {
-            var values = [];
-            for (var _i = 0; _i < arguments.length; _i++) {
-                values[_i] = arguments[_i];
-            }
-            _pool.push.apply(_pool, values);
-            return this;
-        }
-    };
-}
-
-exports.toClass = toClass;
+var __assign=function(){return(__assign=Object.assign||function(t){for(var r,n=1,e=arguments.length;n<e;n++)for(var o in r=arguments[n])Object.prototype.hasOwnProperty.call(r,o)&&(t[o]=r[o]);return t}).apply(this,arguments)};function deepFind(t,r){var n=t[r];if(!n)for(var e in t){var o=t[e];is.object(o)&&(n=deepFind(o,r))}return n}var is={object:function(t){return"[object Object]"===Object.prototype.toString.call(t)}};function toClass(t){var r={},n=new t,e=Object.keys(n);return{from:function(t){return r=__assign({},t),function(){for(var t=0,o=e;t<o.length;t++){var i=o[t];n[i]=deepFind(r,i)}return n}()},exclude:function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];return e=e.filter((function(r){return!t.includes(r)})),this},only:function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];return e=t,this},pluck:function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];return e.push.apply(e,t),this}}}exports.toClass=toClass;

@@ -1,10 +1,5 @@
-(function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = global || self, factory(global.scribe = {}));
-}(this, (function (exports) { 'use strict';
-
-    /*! *****************************************************************************
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e((t=t||self).scribe={})}(this,(function(t){"use strict";
+/*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
     Licensed under the Apache License, Version 2.0 (the "License"); you may not use
     this file except in compliance with the License. You may obtain a copy of the
@@ -17,88 +12,4 @@
 
     See the Apache Version 2.0 License for specific language governing permissions
     and limitations under the License.
-    ***************************************************************************** */
-
-    var __assign = function() {
-        __assign = Object.assign || function __assign(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-                s = arguments[i];
-                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-            }
-            return t;
-        };
-        return __assign.apply(this, arguments);
-    };
-
-    /**
-     * traverses the entire object unitl
-     * the specified value is found.
-     * Not: Does not cover arrays.
-     */
-    function deepFind(box, value) {
-        var result = box[value];
-        if (!result) {
-            for (var key in box) {
-                var item = box[key];
-                if (is.object(item)) {
-                    result = deepFind(item, value);
-                }
-            }
-        }
-        return result;
-    }
-    var is = {
-        object: function (box) {
-            return Object.prototype.toString.call(box) === "[object Object]";
-        }
-    };
-    //# sourceMappingURL=utils.js.map
-
-    function toClass(instance) {
-        var _json = {};
-        var _instance = new instance();
-        var _pool = Object.keys(_instance);
-        var exec = function () {
-            for (var _i = 0, _pool_1 = _pool; _i < _pool_1.length; _i++) {
-                var key = _pool_1[_i];
-                _instance[key] = deepFind(_json, key);
-            }
-            return _instance;
-        };
-        return {
-            from: function (json) {
-                _json = __assign({}, json);
-                return exec();
-            },
-            exclude: function () {
-                var values = [];
-                for (var _i = 0; _i < arguments.length; _i++) {
-                    values[_i] = arguments[_i];
-                }
-                _pool = _pool.filter(function (v) { return !values.includes(v); });
-                return this;
-            },
-            only: function () {
-                var values = [];
-                for (var _i = 0; _i < arguments.length; _i++) {
-                    values[_i] = arguments[_i];
-                }
-                _pool = values;
-                return this;
-            },
-            pluck: function () {
-                var values = [];
-                for (var _i = 0; _i < arguments.length; _i++) {
-                    values[_i] = arguments[_i];
-                }
-                _pool.push.apply(_pool, values);
-                return this;
-            }
-        };
-    }
-
-    exports.toClass = toClass;
-
-    Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
+    ***************************************************************************** */var e=function(){return(e=Object.assign||function(t){for(var e,n=1,r=arguments.length;n<r;n++)for(var o in e=arguments[n])Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o]);return t}).apply(this,arguments)};function n(t,e){var o=t[e];if(!o)for(var u in t){var f=t[u];r.object(f)&&(o=n(f,e))}return o}var r={object:function(t){return"[object Object]"===Object.prototype.toString.call(t)}};t.toClass=function(t){var r={},o=new t,u=Object.keys(o);return{from:function(t){return r=e({},t),function(){for(var t=0,e=u;t<e.length;t++){var f=e[t];o[f]=n(r,f)}return o}()},exclude:function(){for(var t=[],e=0;e<arguments.length;e++)t[e]=arguments[e];return u=u.filter((function(e){return!t.includes(e)})),this},only:function(){for(var t=[],e=0;e<arguments.length;e++)t[e]=arguments[e];return u=t,this},pluck:function(){for(var t=[],e=0;e<arguments.length;e++)t[e]=arguments[e];return u.push.apply(u,t),this}}},Object.defineProperty(t,"__esModule",{value:!0})}));
