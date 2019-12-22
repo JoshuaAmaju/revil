@@ -1,13 +1,13 @@
 {
+  "name": "xclass",
   "version": "0.0.1",
-  "name": "@scribe/json",
+  "main": "dist/xclass.cjs.js",
+  "module": "dist/xclass.esm.js",
+  "browser": "dist/xclass.umd.js",
   "description": "Convert JSON to class",
-  "main": "dist/scribe.cjs.js",
-  "module": "dist/scribe.esm.js",
-  "browser": "dist/scribe.umd.js",
-  "repository": "https://github.com/JoshuaAmaju/scribe.git",
   "author": "Joshua Amaju <princejosh0007@gmail.com>",
   "bugs": "https://github.com/JoshuaAmaju/scribe/issues",
+  "repository": "https://github.com/JoshuaAmaju/scribe.git",
   "license": "MIT",
   "files": [
     "dist"
@@ -26,10 +26,10 @@
     "dev": "rollup -c -w"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.0",
-    "@rollup/plugin-typescript": "^2.0.1",
-    "rollup-plugin-terser": "^5.1.3",
     "tslib": "^1.10.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "rollup-plugin-terser": "^5.1.3",
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-typescript": "^2.0.1"
   }
 }

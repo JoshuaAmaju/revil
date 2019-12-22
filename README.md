@@ -1,25 +1,25 @@
-# scribe
+# xclass
 
 Convert JSON to class
 
 ## Installation
 
 ```javascript
-yarn add @scribe/json
+yarn add xclass
 
 or
 
-npm install @scribe/json
+npm install xclass
 ```
 
 ## Usage
 
 ```javascript
-import { toClass } from "@scribe/json";
+import { toClass } from "xclass";
 
 or;
 
-const { toClass } = require("@scribe/json");
+const { toClass } = require("xclass");
 ```
 
 ## Example
