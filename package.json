@@ -1,15 +1,25 @@
 {
-  "name": "scribe",
   "version": "0.0.1",
+  "name": "@scribe/json",
   "description": "Convert JSON to class",
   "main": "dist/scribe.cjs.js",
   "module": "dist/scribe.esm.js",
   "browser": "dist/scribe.umd.js",
   "repository": "https://github.com/JoshuaAmaju/scribe.git",
   "author": "Joshua Amaju <princejosh0007@gmail.com>",
+  "bugs": "https://github.com/JoshuaAmaju/scribe/issues",
   "license": "MIT",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "json",
+    "class",
+    "mapper",
+    "convert",
+    "serialize",
+    "json2class",
+    "deserialize"
   ],
   "scripts": {
     "build": "rollup -c",
