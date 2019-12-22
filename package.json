@@ -1,0 +1,22 @@
+{
+  "name": "scribe",
+  "version": "0.0.1",
+  "description": "Convert JSON to class",
+  "main": "index.js",
+  "commonjs": "dist/scribe.js",
+  "module": "dist/scribe.esm.js",
+  "browser": "dist/scribe.umd.js",
+  "repository": "https://github.com/JoshuaAmaju/scribe.git",
+  "author": "Joshua Amaju <princejosh0007@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.114.0"
+  }
+}
