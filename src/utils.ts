@@ -1,3 +1,8 @@
+/**
+ * traverses the entire object unitl
+ * the specified value is found.
+ * Not: Does not cover arrays.
+ */
 export function deepFind(box: object, value: string) {
   let result = box[value];
 
