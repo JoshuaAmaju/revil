@@ -5,21 +5,21 @@ Convert JSON to class
 ## Installation
 
 ```javascript
-yarn add scribe
+yarn add @scribe/json
 
 or
 
-npm install scribe
+npm install @scribe/json
 ```
 
 ## Usage
 
 ```javascript
-import {toClass} from 'scribe'
+import { toClass } from "@scribe/json";
 
-or
+or;
 
-const {toClass} = require('scribe);
+const { toClass } = require("@scribe/json");
 ```
 
 ## Example
