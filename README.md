@@ -24,22 +24,22 @@ const {toClass} = require('scribe);
 
 ## Example
 
-```
+```javascript
 class Person {
-    lastName: string = '';
-    firstName: string = '';
-    occupation: string = '';
+  lastName: string = "";
+  firstName: string = "";
+  occupation: string = "";
 }
 
 const json = {
-    lastName: 'Doe',
-    firstName: 'John',
-    bio: {
-        occupation: 'doctor'
-    }
-}
+  lastName: "Doe",
+  firstName: "John",
+  bio: {
+    occupation: "doctor"
+  }
+};
 
-const person = toClass(Person).from(json)
+const person = toClass(Person).from(json);
 ```
 
 ### Note
@@ -58,10 +58,10 @@ const person = toClass(Person).from(json)
 
 ### Example
 
-```
+```javascript
 const person = toClass(Person)
-.only('lastName', 'occupation')
-.from(json)
+  .only("lastName", "occupation")
+  .from(json);
 ```
 
 **Other methods are optional. But if you need to call any of them, they must be called before calling `.from()`.**
